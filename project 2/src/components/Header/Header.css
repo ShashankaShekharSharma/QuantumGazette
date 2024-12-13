@@ -1,5 +1,5 @@
 .header {
-  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  background: rgb(0, 0, 0);
   color: white;
   padding: var(--spacing-md) 0;
   height: var(--header-height);
@@ -15,9 +15,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -49,7 +46,6 @@
   left: -10px;
   right: -10px;
   bottom: -10px;
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   transform: scale(0.8);
   opacity: 0;
@@ -59,4 +55,41 @@
 .logo:hover::before {
   transform: scale(1);
   opacity: 1;
+  
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.logo {
+  display: flex;
+  align-items: center; 
+  text-decoration: none; 
+}
+
+.logo-img {
+  height: 40px; 
+  width: auto; 
+  margin-right: var(--spacing-sm); 
+}
+
+.logo-text {
+  font-size: 1.2rem; 
+  color: inherit;
+  
+}
+
+@media (max-width: 768px) { 
+  .logo-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) { 
+  .logo-text {
+    font-size: 0.5rem;
+  }
 }

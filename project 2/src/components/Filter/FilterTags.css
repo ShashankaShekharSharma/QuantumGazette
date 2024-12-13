@@ -17,8 +17,8 @@
 }
 
 .filter-tag[data-active="true"] {
-  background: var(--color-primary);
-  color: white;
+  background: var(--color-filter-button);
+  color: var(--color-text);
   border-color: var(--color-primary);
 }
 

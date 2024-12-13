@@ -1,10 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import "./slug.css";
 
 export async function getStaticPaths() {
-  const articles = await getCollection('articles');
-  return articles.map(article => ({
+  const articles = await getCollection("articles");
+  return articles.map((article) => ({
     params: { slug: article.slug },
     props: { article },
   }));
@@ -15,18 +16,20 @@ const { Content } = await article.render();
 ---
 
 <Layout title={article.data.title}>
-  <article class="prose lg:prose-xl mx-auto">
-    <h1>{article.data.title}</h1>
-    <div class="flex gap-4 text-gray-600 mb-8">
-      <span>By {article.data.author}</span>
-      <span>•</span>
-      <time datetime={article.data.pubDate.toISOString()}>
+  <article class="article-container">
+    <h1 class="article-title">{article.data.title}</h1>
+    <div class="article-meta">
+      <span class="article-author">By {article.data.author}</span>
+      <span class="article-separator">•</span>
+      <time class="article-date" datetime={article.data.pubDate.toISOString()}>
         {article.data.pubDate.toLocaleDateString()}
       </time>
     </div>
-    {article.data.image && (
-      <img src={article.data.image} alt="" class="w-full max-h-96 object-cover rounded-lg mb-8" />
-    )}
+    {
+      article.data.image && (
+        <img src={article.data.image} alt="" class="article-image" />
+      )
+    }
     <Content />
   </article>
 </Layout>

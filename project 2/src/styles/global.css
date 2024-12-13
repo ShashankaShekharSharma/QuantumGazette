@@ -66,7 +66,6 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 9998;
-  transition: transform var(--transition-speed);
 }
 
 /* Quantum Background Effect */
@@ -87,7 +86,7 @@ img {
 }
 
 /* Link Hover Effects */
-a {
+/* a {
   position: relative;
   text-decoration: none;
   color: var(--color-primary);
@@ -114,4 +113,4 @@ a::after {
 a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
-}
+} */
