@@ -1,0 +1,23 @@
+---
+import Navigation from './Navigation.astro';
+import ThemeToggle from '../ThemeToggle/ThemeToggle.astro';
+import './Header.css';
+---
+
+<header class="header">
+  <div class="header-container">
+    <a href="/" class="logo">The Quantum Gazette</a>
+    <div class="header-right">
+      <Navigation />
+      <ThemeToggle />
+    </div>
+  </div>
+</header>
+
+<style>
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+</style>

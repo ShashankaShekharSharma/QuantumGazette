@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TeamSection from '../../components/TeamSection/TeamSection.astro';
+import TeamMember from '../../components/TeamMember/TeamMember.astro';
+import './about.css';
+
+const editors = [
+  {
+    name: "Dr. Elena Rodriguez",
+    role: "Editor-in-Chief",
+    bio: "Leading quantum physicist with 15 years of experience in science communication.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    socialLinks: {
+      twitter: "https://twitter.com/elenarodriguez",
+      linkedin: "https://linkedin.com/in/elenarodriguez"
+    }
+  },
+  {
+    name: "Dr. James Chen",
+    role: "Senior Science Editor",
+    bio: "Former NASA researcher specializing in quantum mechanics and space technology.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+    socialLinks: {
+      twitter: "https://twitter.com/jameschen",
+      linkedin: "https://linkedin.com/in/jameschen"
+    }
+  }
+];
+
+const developers = [
+  {
+    name: "Sarah Johnson",
+    role: "Lead Developer",
+    bio: "Full-stack developer with expertise in modern web technologies and scientific platforms.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+    socialLinks: {
+      github: "https://github.com/sarahjohnson",
+      linkedin: "https://linkedin.com/in/sarahjohnson"
+    }
+  },
+  {
+    name: "Alex Kim",
+    role: "Frontend Developer",
+    bio: "UI/UX specialist focused on creating intuitive interfaces for complex scientific content.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    socialLinks: {
+      github: "https://github.com/alexkim",
+      linkedin: "https://linkedin.com/in/alexkim"
+    }
+  }
+];
+---
+
+<Layout title="About Us">
+  <div class="about-container">
+    <section class="about-intro">
+      <h1>About The Quantum Gazette</h1>
+      <p>
+        The Quantum Gazette is your premier destination for cutting-edge scientific news and discoveries. 
+        Our team of expert editors and developers work together to bring you accurate, engaging, and 
+        accessible content from the frontiers of quantum science and technology.
+      </p>
+    </section>
+
+    <TeamSection 
+      title="Our Editorial Team" 
+      description="Meet our distinguished editors who ensure the highest quality of scientific journalism."
+    >
+      {editors.map(editor => (
+        <TeamMember {...editor} />
+      ))}
+    </TeamSection>
+
+    <TeamSection 
+      title="Our Development Team" 
+      description="Meet the talented developers who make our digital platform possible."
+    >
+      {developers.map(developer => (
+        <TeamMember {...developer} />
+      ))}
+    </TeamSection>
+  </div>
+</Layout>
