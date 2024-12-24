@@ -1,4 +1,3 @@
-// Custom cursor implementation
 function createCustomCursor() {
   const cursorDot = document.createElement('div');
   const cursorOutline = document.createElement('div');
@@ -17,7 +16,7 @@ function createCustomCursor() {
     cursorOutline.style.transform = `translate(${posX - 12}px, ${posY - 12}px)`;
   });
   
-  // Add hover effect for clickable elements
+
   document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursorOutline.style.transform += ' scale(1.5)';
@@ -29,14 +28,19 @@ function createCustomCursor() {
       cursorOutline.style.backgroundColor = 'transparent';
     });
   });
+
+
+  if (window.innerWidth <= 768) {
+    cursorDot.style.display = 'none';
+    cursorOutline.style.display = 'none';
+  }
 }
 
-// Quantum background effect
 function createQuantumBackground() {
   const bg = document.createElement('div');
   bg.className = 'quantum-bg';
   
-  // Create quantum particles
+
   for (let i = 0; i < 50; i++) {
     const particle = document.createElement('div');
     particle.className = 'quantum-particle';
@@ -49,7 +53,7 @@ function createQuantumBackground() {
   document.body.appendChild(bg);
 }
 
-// Initialize effects when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', () => {
   createCustomCursor();
   createQuantumBackground();
